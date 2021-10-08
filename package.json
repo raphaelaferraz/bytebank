@@ -1,0 +1,12 @@
+{
+  "name": "projeto_bytebank",
+  "version": "1.0.0",
+  "description": "Projeto para o Bytebank ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raphaela Guiland Ferraz",
+  "license": "ISC",
+  "type": "module"
+}
