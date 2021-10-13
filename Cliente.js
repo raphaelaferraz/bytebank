@@ -1,8 +1,5 @@
 //Criando uma classe para o cliente do banco:
 export class Cliente {
-    nome;
-    _cpf; //atributo privado: cada pessoa possui um único cpf durante a vida, sendo assim, não tem necessidade de alterá-lo.
-
     //é necessário um acessor para que o atributo privado CPF só esteja disponível para visualização:
     get cpf(){
         return this._cpf; //o return faz com que retorne o cpf do cliente
