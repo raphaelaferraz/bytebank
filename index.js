@@ -1,26 +1,19 @@
 import {Cliente} from "./Cliente.js";
-import {ContaCorrente} from "./ContaCorrente.js";
-import {ContaPoupanca} from "./ContaPoupanca.js";
+import { Funcionario } from "./Funcionario/Funcionario.js";
+import { Gerente } from "./Funcionario/Gerente.js";
+import { Diretor } from "./Funcionario/Diretor.js";
+import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
 
-//criando os clientes com base nos atributos da classe
-const cliente1 = new Cliente('Victor',  123456789);
-const cliente2 = new Cliente('Raphaela', 987654321);
+const diretor1 = new Diretor("Raphaela", 10000, 1234567800);
+diretor1.cadastrarSenha("123456");
 
+const gerente1 = new Gerente("Vicotr", 5000, 9874612300);
+gerente1.cadastrarSenha("123")
 
-//Criando uma conta corrente para o cliente 1
-const contaCorrenteCliente1 = new ContaCorrente(cliente1, 1001);
+const cliente1 = new Cliente("Najara", 55555555, "866");
 
+const gerenteEstaLogado = SistemaAutenticacao.login(gerente1, "123");
+const diretorEstaLogado = SistemaAutenticacao.login(diretor1, "123456");
+const clienteEstaLogado = SistemaAutenticacao.login(cliente1, "866")
+console.log(diretorEstaLogado, gerenteEstaLogado, clienteEstaLogado);
 
-//cirando uma conta corrente para o cliente 2
-const contaCorrenteCliente2 = new ContaCorrente(cliente2, 1002);
-
-
-//Operações de saque e deposito 
-// contaCorrenteCliente1.depositar(500);
-let valorSacado = contaCorrenteCliente1.sacar(100);
-// contaCorrenteCliente1.transferir(25, contaCorrenteCliente2);
-
-const contaPoupancaCliente1 = new ContaPoupanca(50, cliente1, 1001);
-// contaPoupancaCliente1.sacar(10);
-// console.log(contaPoupancaCliente1);
-// console.log(contaCorrenteCliente1);
